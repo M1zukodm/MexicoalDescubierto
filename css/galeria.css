@@ -1,0 +1,11 @@
+#carouselExampleAutoplaying {
+    max-width: 100%; /* Asegura que el carrusel no se salga del contenedor */
+    height: 240px; /* Puedes ajustar esta altura según tus necesidades */
+    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga del contenedor */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Ajusta la imagen para que cubra el área del contenedor */
+    width: 100%; /* Asegura que la imagen tome el ancho completo del contenedor */
+    height: 100%; /* Asegura que la imagen tome la altura completa del contenedor */
+}

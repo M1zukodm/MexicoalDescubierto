@@ -1,0 +1,134 @@
+.carousel-container {
+    max-width: 1800px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centrar el carrusel */
+}
+
+.carousel-inner img {
+    max-height: 700px; /* Altura máxima del carrusel */
+    object-fit: cover;
+}
+
+.carousel-caption {
+    color: white !important;
+    font-size: 15px;
+}
+
+#barra{
+    background-color: #ECE3CE;
+    padding: 10px;
+}
+
+.top-buttons .btn {
+    padding: 10px 30px; /* Alarga los botones aumentando el padding */
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
+    margin: 0 10px; /* Añade margen lateral para separar los botones entre sí */
+}
+
+.top-buttons img {
+    max-width: 100px; /* Tamaño del logo */
+    margin: 0 20px; /* Aumenta el margen entre el logo y los botones */
+}
+
+#cuerpo {
+    background-color: #739072;
+}
+
+#subcp{
+    background-color: #4F6F52;
+}
+
+#fin{
+    background-color: #3A4D39;
+}
+
+#btnsup{
+    color: #ECFFE6;
+}
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 500px; /* Ajusta la altura del carrusel para pantallas pequeñas */
+    }
+    .carousel-caption {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+    .top-buttons {
+        flex-wrap: wrap; /* Acomoda los botones en múltiples líneas si es necesario */
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner img {
+        max-height: 300px; /* Ajusta la altura del carrusel para pantallas extra pequeñas */
+    }
+    .carousel-caption {
+        font-size: 10px;
+    }
+    .btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+.carousel-caption h5 {
+font-size: 2rem; /* Tamaño más grande para el título */
+font-family: 'Georgia, serif'; /* Tipografía más elegante */
+text-align: center; /* Alineación centrada */
+}
+
+.carousel-caption p {
+font-size: 1.2rem; /* Tamaño más grande para el párrafo */
+font-family: 'Georgia, serif'; /* Tipografía más elegante */
+text-align: center; /* Alineación centrada */
+}
+
+/* Opcional: Si deseas que la leyenda esté completamente centrada en la imagen */
+.carousel-caption {
+bottom: 20%;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+}
+
+
+#subcp-container {
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene las tarjetas en una sola línea sin envolver */
+    overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas tarjetas */
+    gap: 1rem; /* Espacio entre las tarjetas */
+  }
+
+  .card {
+    flex: 0 0 auto; /* Impide que las tarjetas se estiren o reduzcan */
+  }
+
+#carta{
+    color: black;
+    background-color: #A1D6B2;
+    text-align: justify;
+    border-color: black;
+
+}
+
+#cartaedo{
+    color: black;
+    background-color: #BFD8AF;
+    text-align: justify;
+
+
+}
+
+.carousel-caption {
+   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados opcional */
+}

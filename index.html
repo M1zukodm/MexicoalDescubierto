@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi blog de viaje</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="icon" href="recursos/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/miestilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+   
+
+</head>
+<body id="cuerpo" class="text-center">
+
+    <h2>Hola mejore esto</h2>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="barra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="recursos/logo.png" alt="logo" title="México al Descubierto" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="galeria.html">
+                            <i class="fa-solid fa-globe"></i> Galeria
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mapa.html">
+                            <i class="fa-solid fa-map-location-dot"></i> Mapa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viajes.html">
+                            <i class="fa-solid fa-plane"></i> Viajes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-circle-user"></i> Perfil
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tu proximo destino" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <h1 style="font-family: 'Playfair Display', serif; color: white; font-size: 100px;">México al Descubierto</h1>
+
+
+
+
+    <!-- Botones de destinos -->
+    <div class="d-flex justify-content-center flex-wrap">
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Michoacan</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">CDMX</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Jalisco</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Guerrero</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Oaxaca</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Veracruz</button>
+        <button type="button" class="btn btn-success mx-2 my-2" style="color: black; padding: 10px 20px;">Quintana Roo</button>
+    </div>
+
+    <br>
+
+  <!-- Carrusel -->
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-dark" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+            <img src="recursos/2.png" class="d-block w-100" alt="Lugares">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>México Mágico</h5>
+                <p>Un recorrido por México.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="recursos/morelia.jpg" class="d-block w-100" alt="Michoacan">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Michoacan</h5>
+                <p>Descubre la magia de Michoacán, donde la tradición y la naturaleza se encuentran.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="recursos/jalisco2.jpg" class="d-block w-100" alt="Jalisco">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Jalisco</h5>
+                <p>Vive el espíritu vibrante de Jalisco, desde sus playas doradas hasta su rica cultura.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="recursos/quintana roo.jpg" class="d-block w-100" alt="Quintana Roo">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Quintana Roo</h5>
+                <p>Disfruta de las maravillas caribeñas de Quintana Roo, con sus playas y ruinas mayas.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="recursos/puebla2.png" class="d-block w-100" alt="Puebla">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Puebla</h5>
+                <p>Explora Puebla, un festín de historia, arquitectura colonial y gastronomía exquisita.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+    <br>
+    <div class="card">
+        <div class="card-body" id="carta">
+          <h3>Descubre México: Un Viaje Inolvidable
+        </h3>  
+            México es un destino vibrante y diverso que cautiva a los viajeros con su rica herencia cultural, paisajes impresionantes y una cálida hospitalidad. Desde las playas de arena blanca de Cancún y la Riviera Maya hasta las ciudades coloniales como Guanajuato y San Luis Potosí, México ofrece una amplia variedad de experiencias para todos los gustos.
+            
+            La gastronomía mexicana es otra joya que no te puedes perder. Saborea desde los tacos y tamales hasta los exquisitos moles y salsas, todos preparados con ingredientes frescos y sabores auténticos que reflejan la rica tradición culinaria del país.
+            
+            Además, México es hogar de una asombrosa diversidad de sitios arqueológicos y monumentos históricos. Visita las majestuosas ruinas mayas de Chichén Itzá y Tulum, o explora las antiguas ciudades aztecas como Teotihuacán. Cada rincón del país cuenta una historia fascinante y ofrece una ventana única a sus antiguas civilizaciones.
+        </div>
+      </div>
+
+</body>
+<br>
+<div id="subcp-container">
+    <div class="card" style="width: 18rem;">
+      <img src="recursos/michoacan.jpg" class="card-img-top" alt="Descripción de la imagen">
+      <div class="card-body" id="cartaedo">
+        <h5 class="card-title">Michoacan</h5>
+        <p class="card-text">Michoacán, un estado situado en el corazón de México, es conocido por su rica herencia cultural, su vibrante historia y sus paisajes naturales impresionantes. Con una mezcla perfecta de tradición y modernidad, Michoacán ofrece a los visitantes una experiencia única y auténtica. 
+             No te pierdas la oportunidad de explorar este bello estado, donde cada rincón cuenta una historia.</p>
+        <a href="https://visitmichoacan.com.mx/" class="btn btn-primary" target="_blank">Conocer más</a>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 18rem;">
+      <img src="recursos/quintana roo.jpg" class="card-img-top" alt="Descripción de la imagen">
+      <div class="card-body" id="cartaedo">
+        <h5 class="card-title">Quintana Roo</h5>
+        <p class="card-text" >Quintana Roo, un paraíso caribeño en el sureste de México, es famoso por sus playas de arena blanca y sus aguas cristalinas. Este estado ofrece una combinación perfecta de belleza natural y modernas instalaciones turísticas. Cancún y Playa del Carmen son conocidos por sus resorts de lujo y su animada vida nocturna, mientras que Tulum te invita a descubrir ruinas mayas en un entorno tropical impresionante. No te pierdas la oportunidad de explorar Quintana Roo, donde la naturaleza y la diversión se encuentran en perfecta armonía.</p>
+        <a href="https://www.turismomexico.es/quintana-roo/" class="btn btn-primary" target="_blank">Conocer más</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="recursos/jalisco.jpg" class="card-img-top" alt="Descripción de la imagen">
+        <div class="card-body" id="cartaedo">
+          <h5 class="card-title">Jalisco</h5>
+          <p class="card-text">Jalisco, ubicado en la costa del Pacífico de México, es conocido por su rica tradición cultural, su vibrante música mariachi y su exquisita gastronomía. La ciudad de Guadalajara, su capital, es un centro cultural lleno de vida, con mercados coloridos, arquitectura histórica y una vibrante escena artística. Además, Jalisco ofrece hermosos destinos costeros como Puerto Vallarta, donde puedes disfrutar de playas doradas y un animado ambiente. Explora este estado lleno de tradición y modernidad, donde cada experiencia es una celebración de la cultura mexicana.</p>
+          <a href="https://secturjal.jalisco.gob.mx/inicio" class="btn btn-primary" target="_blank">Conocer más</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="recursos/guerrero.jpeg" class="card-img-top" alt="Descripción de la imagen">
+        <div class="card-body" id="cartaedo">
+          <h5 class="card-title">Guerrero</h5>
+          <p class="card-text">Guerrero, un estado ubicado en la costa del Pacífico de México, es conocido por sus impresionantes playas, su rica cultura y su vibrante vida festiva. Acapulco, uno de los destinos más famosos de Guerrero, ofrece playas de arena dorada y una animada vida nocturna que ha atraído a visitantes durante décadas. Más allá de las playas, Guerrero cuenta con joyas culturales como Taxco, famoso por su arquitectura colonial y sus talleres de plata. No te pierdas la oportunidad de explorar Guerrero, donde el sol, la cultura y la historia se combinan para ofrecer una experiencia inolvidable.
+          </p>
+          <a href="https://www.turismomexico.es/estado-de-guerrero/" class="btn btn-primary" target="_blank">Conocer más</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="recursos/puebla.jpeg" class="card-img-top" alt="Descripción de la imagen">
+        <div class="card-body" id="cartaedo">
+          <h5 class="card-title">Puebla</h5>
+          <p class="card-text">Puebla, un estado en el centro de México, destaca por su impresionante arquitectura colonial y su rica tradición culinaria. La ciudad de Puebla, Patrimonio de la Humanidad, es famosa por su impresionante Catedral y su vibrante cocina, que incluye platillos emblemáticos como el mole poblano. Además, Puebla ofrece paisajes naturales impresionantes y sitios arqueológicos cercanos, como las pirámides de Cholula. No te pierdas la oportunidad de descubrir Puebla, un lugar donde la historia y la gastronomía se entrelazan en una experiencia inolvidable.
+          </p>
+          <a href="https://www.visitpuebla.mx/es/" class="btn btn-primary" target="_blank">Conocer más</a>
+        </div>
+      </div>
+  </div>
+  <br>
+  <br><br>
+  
+
+<script src="js/bootstrap.min.js"></script>
+</html>
