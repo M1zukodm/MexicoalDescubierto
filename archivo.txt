@@ -1,1 +1,2 @@
-hola, esta es una practica de restore
+hola
+Textos para ejercicios sobre modificaciones en ramas 
