@@ -1,0 +1,2 @@
+Modificacion en un archivo para poder modificarlo en GitHub, despues clonar y actualizar en el repositorio local
+Primero hacemos un modificaciones de archivos en repositorio remoto
