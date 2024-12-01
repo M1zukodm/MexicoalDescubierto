@@ -130,7 +130,7 @@ $conn->close();
             <button class="btn" type="submit">Guardar Cambios</button>
         </form>
         
-        <p><a href="php/logout.php" class="btn" style="background-color: #dc3545;">Cerrar sesión</a></p>
+        <p><a href="logout.php" class="btn" style="background-color: #dc3545;">Cerrar sesión</a></p>
 
         <a href="../index.html">
             <button class="btn">Volver a la Página Principal</button>
