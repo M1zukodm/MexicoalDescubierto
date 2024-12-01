@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .logo-container img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="recursos/logo.png" alt="logo" title="México al Descubierto" style="height: 60px;">
+        </a>
+    </div>
+    <div class="container">
+        <h2>Registro</h2>
+        <form action="php/registro.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        
+            <label for="contra">Contraseña:</label>
+            <input type="password" id="contra" name="contra" required>
+        
+            <button type="submit" class="btn">Registrarse</button>
+            <br>
+            
+        </form>
+        <br>
+        <a href="index.html">
+            <button class="btn">Volver a la Página Principal</button>
+        </a>
+    </div>
+</body>
+</html>
+

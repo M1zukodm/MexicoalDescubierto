@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="recursos/personalogo.svg" type="image/x-icon">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .remember {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .remember input {
+            margin-right: 5px;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .logo-container img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="recursos/logo.png" alt="logo" title="México al Descubierto" style="height: 60px;">
+        </a>
+    </div>
+
+        <div class="container">
+            <h2>Inicio de Sesión</h2>
+            <form action="php/login.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+    
+                <label for="contra">Contraseña:</label>
+                <input type="password" id="contra" name="contra" required>
+    
+                <div class="remember">
+                    <input type="checkbox" id="recordar" name="recordar">
+                    <label for="recordar">Mantenerme conectado</label>
+                    
+                </div>
+    <br>
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </form>
+            <a href="registro.html" class="link">¿No tienes cuenta? Regístrate aquí</a>
+<br>
+            <a href="index.html">
+                <button class="btn">Volver a la Página Principal</button>
+            </a>
+
+            <br>
+        </div>
+    
+</body>
+</html>

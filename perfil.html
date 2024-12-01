@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Perfil de Usuario</title>
     <style>
+        /* Estilos para el diseño básico */
         body {
             font-family: Arial, sans-serif;
             background-color: #ADD8E6;
@@ -18,44 +19,30 @@
         .navbar {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Asegura que el logo y el título estén separados */
+            justify-content: space-between;
             background-color: #ECE3CE;
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 20px;
-            width: 100%; /* Hacer que la barra de navegación ocupe todo el ancho */
-            max-width: 1460px; /* Limitar el ancho de la barra de navegación */
+            width: 100%;
+            max-width: 1460px;
         }
-
         .navbar a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: black;
+            font-size: 50px;
+            margin: 0;
+            flex-grow: 1;
             text-align: center;
-            color: #333;
         }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"], input[type="email"], input[type="date"] {
-            width: calc(100% - 20px); /* Ajusta el ancho restando el padding */
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        .container {
+            text-align: center;
+            margin-top: 30px;
         }
         .btn {
             background-color: #28a745;
@@ -64,36 +51,12 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            width: 100%;
+            width: 200px;
+            margin-top: 20px;
         }
         .btn:hover {
             background-color: #218838;
         }
-        .output {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            display: none;
-            text-align: center;
-        }
-        .btn-center {
-        display: inline-block; /* Permite ajustar el tamaño del botón */
-        padding: 10px 20px; /* Tamaño del padding */
-        font-size: 16px; /* Tamaño del texto */
-        cursor: pointer; /* Cambiar el cursor al pasar por encima */
-        background-color: #28a745; /* Color de fondo */
-        color: white; /* Color del texto */
-        border: none; /* Sin borde */
-        border-radius: 4px; /* Bordes redondeados */
-        margin-top: 20px; /* Espacio superior */
-        text-align: center; /* Centrar el texto */
-    }
-
-    .btn-center:hover {
-        background-color: #218838; /* Color del fondo en hover */
-    }
-
     </style>
 </head>
 <body>
@@ -102,72 +65,16 @@
         <a class="navbar-brand" href="index.html">
             <img src="recursos/logo.png" alt="logo" title="México al Descubierto" style="height: 40px;">
         </a>
-        <h1 style="font-family: 'Playfair Display', serif; color: black; font-size: 50px; margin: 0; flex-grow: 1; text-align: center;">
+        <h1>
             <i class="fa-solid fa-user"></i> Tu perfil
         </h1>
     </div>
     
     <div class="container">
-        <h2>Perfil de Usuario</h2>
-        <form id="profileForm">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-            
-            <label for="ubicación">Tu ubicación:</label>
-            <input type="text" id="ubi" name="ubicacion" placeholder="Ciudad, Estado, País" required>
-
-            <button type="button" class="btn" onclick="mostrarInformacion()">Mostrar Información</button>
-        </form>
-
-        <div class="output" id="output">
-            <h3>¡¡Bienvenido de vuelta!!</h3>
-            <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
-            <p><strong>Apellido:</strong> <span id="mostrarApellido"></span></p>
-            <p><strong>Correo Electrónico:</strong> <span id="mostrarEmail"></span></p>
-            <p><strong>Fecha de Nacimiento:</strong> <span id="mostrarFecha"></span></p>
-            <p><strong>Tu ubicación:</strong> <span id="mostrarUbi"></span></p>
-        </div>
+        <h2>Bienvenido a tu perfil de usuario</h2>
+        <p>Haz clic en el botón para acceder a tu perfil y editar tus datos.</p>
+        <a href="php/perfil.php"><button class="btn">Ir a mi perfil</button></a>
     </div>
-
-    <script>
-        function mostrarInformacion() {
-            // Obtener valores de los inputs
-            var nombre = document.getElementById('nombre').value;
-            var apellido = document.getElementById('apellido').value;
-            var email = document.getElementById('email').value;
-            var fechaNacimiento = document.getElementById('fecha_nacimiento').value;
-            var ubi = document.getElementById('ubi').value;
-
-            // Mostrar los valores en el output
-            document.getElementById('mostrarNombre').innerText = nombre;
-            document.getElementById('mostrarApellido').innerText = apellido;
-            document.getElementById('mostrarEmail').innerText = email;
-            document.getElementById('mostrarFecha').innerText = fechaNacimiento;
-            document.getElementById('mostrarUbi').innerText = ubi;
-
-            // Hacer visible la sección de output
-            document.getElementById('output').style.display = 'block';
-        }
-    </script>
-
-    <br><br>
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="window.location.href='index.html'" class="btn-center">
-            <i class="fa-solid fa-house"></i> Volver al Inicio
-        </button>
-    </div>
-
-
-    <br>
 
 </body>
 </html>
