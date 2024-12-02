@@ -1,43 +1,39 @@
 <?php
-session_start(); // Inicia la sesión
+session_start();
 
-// Verificar si el formulario ha sido enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del formulario
-    $nombre = $_POST['nombre'];
-    $contra = $_POST['contra'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mexico";
+$port = 3307;
 
-    // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root"; // Usuario por defecto de XAMPP
-    $password = ""; // Contraseña por defecto
-    $dbname = "mexico"; // Nombre de tu base de datos
-    $port = 3307; // Puerto configurado de MySQL
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
-    // Conexión a la base de datos
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
 
-    // Consulta de usuario en la base de datos
-    $sql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND contra = '$contra'";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $conn->real_escape_string($_POST['nombre']);
+    $contra = $conn->real_escape_string($_POST['contra']);
+
+    $sql = "SELECT id, contra FROM usuarios WHERE nombre = '$nombre'";
     $result = $conn->query($sql);
 
-    // Si el usuario existe, iniciamos la sesión
     if ($result->num_rows > 0) {
-        $usuario = $result->fetch_assoc();
-        $_SESSION['usuario_id'] = $usuario['id']; // Guardamos el ID del usuario en la sesión
-        $_SESSION['usuario_nombre'] = $usuario['nombre']; // Guardamos el nombre del usuario en la sesión
-
-        // Redirigir al perfil
-        header("Location: perfil.php");
-        exit(); // Asegurarse de salir después de la redirección
+        $user = $result->fetch_assoc();
+        if ($user['contra'] === $contra) {
+            $_SESSION['usuario_id'] = $user['id'];
+            header("Location: /paginaViajesOriginal/php/perfil.php");
+            exit();
+        } else {
+            header("Location: /paginaViajesOriginal/login.html?error=1");
+            exit();
+        }
     } else {
-        echo "Nombre o contraseña incorrectos.";
+        header("Location: /paginaViajesOriginal/login.html?error=1");
+        exit();
     }
-
-    // Cerrar la conexión
-    $conn->close();
 }
+$conn->close();
 ?>

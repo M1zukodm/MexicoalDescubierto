@@ -87,3 +87,82 @@ h2 {
 .comment-item .comment-text {
     flex: 1;
 }
+
+/* Estilos para las cartas de los viajes */
+.travel-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.travel-card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-container:hover .text-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-footer button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-footer button:hover {
+    background-color: #218838;
+}

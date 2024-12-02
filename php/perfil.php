@@ -1,9 +1,9 @@
 <?php
 session_start(); // Inicia la sesión
 
-// Verificar si el usuario está autenticado (si no tiene la sesión activa, lo redirigimos al login)
+// Verificar si el usuario está autenticado
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html"); // Si no está autenticado, redirige al login
+    header("Location: /paginaViajesOriginal/login.html");
     exit();
 }
 
@@ -14,25 +14,23 @@ $password = ""; // Contraseña por defecto
 $dbname = "mexico"; // Nombre de tu base de datos
 $port = 3307; // Puerto configurado de MySQL
 
-// Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-// Obtener los datos del usuario (basándonos en el ID guardado en la sesión)
-$usuario_id = $_SESSION['usuario_id']; // Obtener el ID de usuario de la sesión
+// Obtener los datos del usuario basado en su ID
+$usuario_id = $_SESSION['usuario_id'];
 $sql = "SELECT nombre, correo, contra FROM usuarios WHERE id = '$usuario_id'";
 $result = $conn->query($sql);
 
-// Mostrar los datos del usuario
 if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
 } else {
     echo "Usuario no encontrado.";
+    exit();
 }
 
-// Cerrar la conexión
 $conn->close();
 ?>
 
@@ -43,70 +41,91 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
     <style>
-        /* Estilos para el diseño básico */
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             background-color: #ADD8E6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             flex-direction: column;
-        }
-        .navbar {
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: #ECE3CE;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        }
+
+        .navbar {
             width: 100%;
-            max-width: 1460px;
-            text-align: center;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: black;
-            font-size: 50px;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            text-align: center;
-            margin-top: 30px;
             background-color: #ECE3CE;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 800px;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
         }
-        .btn {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 200px;
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            background-color: #ECE3CE;
             margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .btn:hover {
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn.green {
+            background-color: #28a745;
+        }
+
+        .btn.green:hover {
             background-color: #218838;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            width: 100%;
-            margin-bottom: 10px;
+
+        .btn.red {
+            background-color: #dc3545;
+        }
+
+        .btn.red:hover {
+            background-color: #c82333;
+        }
+
+        .btn.blue {
+            background-color: #007bff;
+        }
+
+        .btn.blue:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -115,25 +134,26 @@ $conn->close();
         <h1>Perfil de Usuario</h1>
     </div>
     <div class="container">
-        <h2>¡Bienvenido, <?php echo htmlspecialchars($usuario['nombre']); ?>!</h2>
-        
+        <h2>Bienvenido, <?php echo htmlspecialchars($usuario['nombre']); ?>!</h2>
         <form action="editar_perfil.php" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($usuario['nombre']); ?>" required><br><br>
-            
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" name="correo" value="<?php echo htmlspecialchars($usuario['correo']); ?>" required><br><br>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($usuario['nombre']); ?>" required>
 
-            <label for="contra">Nueva Contraseña:</label>
-            <input type="password" id="contra" name="contra" placeholder="Dejar vacío si no desea cambiarla"><br><br>
-            
-            <button class="btn" type="submit">Guardar Cambios</button>
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" value="<?php echo htmlspecialchars($usuario['correo']); ?>" required>
+
+            <label for="contra">Nueva Contraseña</label>
+            <input type="password" id="contra" name="contra" placeholder="Dejar vacío para mantener la actual">
+
+            <button class="btn green" type="submit">Guardar Cambios</button>
         </form>
-        
-        <p><a href="logout.php" class="btn" style="background-color: #dc3545;">Cerrar sesión</a></p>
+
+        <a href="logout.php">
+            <button class="btn red">Cerrar Sesión</button>
+        </a>
 
         <a href="../index.html">
-            <button class="btn">Volver a la Página Principal</button>
+            <button class="btn blue">Volver a la Página Principal</button>
         </a>
     </div>
 </body>

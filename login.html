@@ -114,4 +114,19 @@
         </div>
     
 </body>
+
+<script>
+    // Verificar si hay un parámetro 'error' en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    // Si el parámetro 'error' es igual a '2', muestra el mensaje de advertencia
+    if (error === '2') {
+        alert('Nombre o contraseña incorrectos.');
+        
+        // Limpiar el parámetro 'error' de la URL después de mostrar el mensaje
+        history.replaceState(null, '', window.location.pathname);
+    }
+</script>
+
 </html>
